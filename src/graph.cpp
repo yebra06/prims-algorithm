@@ -36,26 +36,26 @@ void Graph::set_data(int index, int end1, int end2, int weight) {
 /// Overloaded ostream operator to display the graph data.
 void Graph::display(ostream &out) const {
 
-    /// Display node data.
+	/// Display node data.
 	out << "\nNodes: " << node_count << "\nEdges: " << edge_count << endl << endl;
 	for (int i = 0; i < node_count; i++) {
 		out << "Node " << nodes[i].index << " is adjacent with nodes: ";
 		for (int j = 0; j < nodes[i].adj.size(); j++)
 			out << nodes[i].adj[j] << ", ";
 		out << endl;
-    }
-
-    /// Display edge set.
-    out << "\nEdge Set = { ";
-    for (int i = 0; i < edge_count; i++)
-        out << "(" << edges[i].end1 << ", " << edges[i].end2 << "), ";
-    out << "}" << endl << endl;
-
-    /// Display edge data.
-    for (int i = 0; i < edge_count; i++)
-        out << "Edge " << i << " connects nodes " << edges[i].end1 << " and "
-            << edges[i].end2 << " with cost " << edges[i].weight << endl;
-    out << endl;
+    	}
+	
+	/// Display edge set.
+	out << "\nEdge Set = { ";
+	for (int i = 0; i < edge_count; i++)
+		out << "(" << edges[i].end1 << ", " << edges[i].end2 << "), ";
+	out << "}" << endl << endl;
+	
+	/// Display edge data.
+	for (int i = 0; i < edge_count; i++)
+		out << "Edge " << i << " connects nodes " << edges[i].end1 << " and "
+			<< edges[i].end2 << " with cost " << edges[i].weight << endl;
+	out << endl;
 }
 
 void Graph::prims() {
