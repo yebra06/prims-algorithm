@@ -4,7 +4,7 @@
 
 
 Edge::Edge(int index) {
-    this->index = index;
+    	this->index = index;
 	end1 = 0;
 	end2 = 0;
 	weight = 0;
