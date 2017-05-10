@@ -32,7 +32,7 @@ int main(int argumentCount, char** argumentVector) {
 	graph_file >> node_count >> edge_count;
 
 	/// Read in rest of file and create a Graph object.
-    Graph G(node_count, edge_count);
+    	Graph G(node_count, edge_count);
 	int edge1, edge2, weight;
 	for (int i = 0; i < edge_count; i++) {
 		graph_file >> edge1 >> edge2 >> weight;
