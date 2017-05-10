@@ -17,31 +17,31 @@ using namespace std;
 #include <vector>
 
 
-int main( int argumentCount, char** argumentVector ) {
+int main(int argumentCount, char** argumentVector) {
 
-    /// Open file and assert existence.
-    ifstream graph_file("graph.txt");
-    if ( !graph_file.good() ) {
-        cout << "Error opening file. Program ended.";
-        exit(1);
-    }
+	/// Open file and assert existence.
+	ifstream graph_file("graph.txt");
+	if (!graph_file.good()) {
+		cout << "Error opening file. Program ended.";
+		exit(1);
+	}
 
-    /// Read file. Number of edges is first value, amount of vertices is second value.
-    int node_count, edge_count;
-    vector<int> graph_data;
-    graph_file >> node_count >> edge_count;
+	/// Read file. Number of edges is first value, amount of vertices is second value.
+	int node_count, edge_count;
+	vector<int> graph_data;
+	graph_file >> node_count >> edge_count;
 
-    /// Read in rest of file and create a Graph object.
-    Graph G( node_count, edge_count );
-    int edge1, edge2, weight;
-    for ( int i = 0; i < edge_count; i++ ) {
-        graph_file >> edge1 >> edge2 >> weight;
-        G.set_data( i, edge1, edge2, weight );
-    }
-
-    /// Display graph data, close graph_file, and end program.
-    G.display( cout );
-    G.prims();
-    graph_file.close();
+	/// Read in rest of file and create a Graph object.
+    Graph G(node_count, edge_count);
+	int edge1, edge2, weight;
+	for (int i = 0; i < edge_count; i++) {
+		graph_file >> edge1 >> edge2 >> weight;
+		G.set_data(i, edge1, edge2, weight);
+	}
+	
+	/// Display graph data, close graph_file, and end program.
+	G.display(cout);
+	G.prims();
+	graph_file.close();
 	return 0;
 }
